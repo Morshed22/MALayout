@@ -65,8 +65,8 @@ class MACustomLayout: UICollectionViewLayout {
             if contentOffSet  > frameOriginY  {
                 
                 let delta = (contentOffSet)/Double(itemHeight) - Double(row)
-                let scale = 1.0 - delta
-                attributes.alpha = CGFloat(0.7 - delta)
+                let scale = 1.0 - delta/4
+                attributes.alpha = CGFloat(1.0 - delta)
                 attributes.transform = CGAffineTransform(scaleX: CGFloat(scale), y: CGFloat(scale))
             }
             y[column] = y[column] + itemHeight
